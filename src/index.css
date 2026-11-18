@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Exclusive NIMAI Midnight Purple + Deep Navy + Electric Blue + Cyan + Subtle Gold Palette */
+  --color-obsidian-navy: #06091F;
+  --color-midnight-navy: #090F2D;
+  --color-royal-purple: #1D0F47;
+  --color-deep-violet: #2A1463;
+  --color-royal-indigo: #162463;
+  --color-electric-blue: #2563EB;
+  --color-azure-glow: #38BDF8;
+  --color-cyan-glow: #22D3EE;
+  --color-turquoise: #14B8A6;
+  --color-gold-accent: #F5C451;
+  --color-ice-mist: #E6F4FF;
+  --color-silver-mist: #B8C7E4;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #06091F;
+    color: #FFFFFF;
+    overflow-x: clip;
+  }
+
+  body {
+    overflow-x: clip;
+    background-color: #06091F;
+  }
+
+  section[id],
+  div[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid #22D3EE;
+    outline-offset: 2px;
+  }
+}
+
+/* Exclusive glassmorphism & atmospheric lighting surfaces */
+.nimai-glass {
+  background: linear-gradient(
+    145deg,
+    rgba(24, 24, 72, 0.72) 0%,
+    rgba(10, 15, 44, 0.84) 100%
+  );
+  border: 1px solid rgba(148, 197, 255, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.nimai-glass-violet {
+  background: linear-gradient(
+    145deg,
+    rgba(48, 22, 108, 0.7) 0%,
+    rgba(13, 21, 59, 0.86) 100%
+  );
+  border: 1px solid rgba(167, 139, 250, 0.24);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.nimai-glass-cyan {
+  background: linear-gradient(
+    145deg,
+    rgba(14, 42, 82, 0.76) 0%,
+    rgba(9, 16, 44, 0.88) 100%
+  );
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.nimai-glass-gold {
+  background: linear-gradient(
+    145deg,
+    rgba(42, 20, 99, 0.74) 0%,
+    rgba(14, 22, 58, 0.88) 100%
+  );
+  border: 1px solid rgba(245, 196, 81, 0.28);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.nimai-surface-gradient {
+  background:
+    radial-gradient(65% 45% at 14% 10%, rgba(109, 40, 217, 0.28) 0%, transparent 65%),
+    radial-gradient(55% 40% at 88% 16%, rgba(34, 211, 238, 0.18) 0%, transparent 62%),
+    radial-gradient(40% 35% at 72% 72%, rgba(245, 196, 81, 0.08) 0%, transparent 60%),
+    radial-gradient(50% 45% at 45% 96%, rgba(37, 99, 235, 0.2) 0%, transparent 65%),
+    linear-gradient(180deg, #06091F 0%, #0D0E36 45%, #07112F 100%);
+}
+
+@layer components {
+  /* Pointer-responsive spotlight card glow (zero React re-renders) */
+  .nimai-spotlight {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nimai-spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    background: radial-gradient(
+      420px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(34, 211, 238, 0.16),
+      rgba(139, 92, 246, 0.08) 42%,
+      transparent 72%
+    );
+    z-index: 1;
+  }
+
+  .nimai-spotlight:hover::before {
+    opacity: 1;
+  }
+
+  /* Luminous button sheen sweep */
+  .nimai-btn-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nimai-btn-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.36) 50%,
+      transparent 80%
+    );
+    transform: translateX(-125%);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  .nimai-btn-sheen:hover::after {
+    transform: translateX(125%);
+  }
+}
+
+/* Precision architectural grid */
+.bg-engineering-grid {
+  background-image:
+    linear-gradient(to right, rgba(56, 189, 248, 0.065) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 92, 246, 0.065) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+.bg-engineering-grid-fine {
+  background-image:
+    linear-gradient(to right, rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Marquee animation for partner showcase */
+@keyframes marquee-left {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 40s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 44s linear infinite;
+}
+
+.marquee-track:hover .animate-marquee-left,
+.marquee-track:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
+
+/* SVG signal flow animation */
+@keyframes signal-flow {
+  0% { stroke-dashoffset: 32; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-signal-flow {
+  stroke-dasharray: 6 10;
+  animation: signal-flow 1.4s linear infinite;
+}
+
+/* Interactive building hotspot wave */
+@keyframes slow-pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.78; }
+  70% { transform: scale(1.8); opacity: 0; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.animate-hotspot-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: slow-pulse-ring 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Atmospheric starlight & ambient aura drift */
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.88; }
+}
+
+.animate-star-twinkle {
+  animation: star-twinkle var(--twinkle-duration, 5.5s) ease-in-out infinite;
+  animation-delay: var(--twinkle-delay, 0s);
+}
+
+@keyframes aura-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(24px, -18px, 0) scale(1.06); }
+}
+
+.animate-aura-drift {
+  animation: aura-drift 18s ease-in-out infinite;
+}
+
+@keyframes streak-glide {
+  0% { transform: translate3d(-100%, 0, 0); opacity: 0; }
+  18% { opacity: 0.55; }
+  82% { opacity: 0.55; }
+  100% { transform: translate3d(220%, 0, 0); opacity: 0; }
+}
+
+.animate-streak-glide {
+  animation: streak-glide 11s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right,
+  .animate-signal-flow,
+  .animate-hotspot-ring,
+  .animate-star-twinkle,
+  .animate-aura-drift,
+  .animate-streak-glide {
+    animation: none !important;
+  }
+  .nimai-btn-sheen::after {
+    display: none;
+  }
+}
