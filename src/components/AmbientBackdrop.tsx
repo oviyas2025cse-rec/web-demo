@@ -37,37 +37,37 @@ export const AmbientBackdrop: React.FC = () => {
         className="absolute inset-0 w-full h-full object-cover opacity-[0.06] mix-blend-screen"
       />
 
-      {/* Slow-drifting royal purple, cyan, electric blue & subtle golden lighting */}
+      {/* Slow-drifting imperial amethyst, sapphire & 24K champagne-gold atmospheric depth */}
       <div
-        className="absolute -top-40 -left-32 w-[580px] h-[580px] rounded-full opacity-35 blur-[130px] animate-aura-drift"
-        style={{ background: 'radial-gradient(circle, #5B21B6 0%, transparent 70%)' }}
+        className="absolute -top-40 -left-32 w-[620px] h-[620px] rounded-full opacity-30 blur-[135px] animate-aura-drift"
+        style={{ background: 'radial-gradient(circle, #4C1D95 0%, transparent 70%)' }}
       />
       <div
-        className="absolute top-[16%] -right-40 w-[540px] h-[540px] rounded-full opacity-25 blur-[130px] animate-aura-drift"
+        className="absolute top-[10%] -right-36 w-[540px] h-[540px] rounded-full opacity-22 blur-[135px] animate-aura-drift"
         style={{
-          background: 'radial-gradient(circle, #0891B2 0%, transparent 70%)',
+          background: 'radial-gradient(circle, #E8C15A 0%, transparent 68%)',
           animationDelay: '-6s',
         }}
       />
       <div
-        className="absolute bottom-[-120px] left-[28%] w-[640px] h-[420px] rounded-full opacity-25 blur-[140px]"
+        className="absolute bottom-[-120px] left-[28%] w-[640px] h-[420px] rounded-full opacity-24 blur-[140px]"
         style={{ background: 'radial-gradient(circle, #1D4ED8 0%, transparent 70%)' }}
       />
       <div
-        className="absolute top-[52%] left-[62%] w-[360px] h-[360px] rounded-full opacity-[0.09] blur-[120px]"
-        style={{ background: 'radial-gradient(circle, #F5C451 0%, transparent 70%)' }}
+        className="absolute top-[52%] left-[62%] w-[400px] h-[400px] rounded-full opacity-[0.12] blur-[120px]"
+        style={{ background: 'radial-gradient(circle, #E8C15A 0%, transparent 70%)' }}
       />
 
-      {/* Precision architectural engineering grid */}
+      {/* Precision architectural gilded-sapphire grid */}
       <div className="absolute inset-0 bg-engineering-grid opacity-45" />
 
-      {/* Subtle moving horizontal optical light streak */}
-      <div className="absolute top-[28%] inset-x-0 h-px overflow-hidden opacity-45">
-        <div className="w-1/3 h-full bg-gradient-to-r from-transparent via-[#22D3EE] to-transparent animate-streak-glide" />
+      {/* Subtle moving horizontal brushed-gold & sapphire optical ribbons */}
+      <div className="absolute top-[26%] inset-x-0 h-px overflow-hidden opacity-50">
+        <div className="w-1/3 h-full bg-gradient-to-r from-transparent via-[#E8C15A] to-transparent animate-streak-glide" />
       </div>
-      <div className="absolute top-[74%] inset-x-0 h-px overflow-hidden opacity-30">
+      <div className="absolute top-[74%] inset-x-0 h-px overflow-hidden opacity-35">
         <div
-          className="w-1/4 h-full bg-gradient-to-r from-transparent via-[#F5C451] to-transparent animate-streak-glide"
+          className="w-1/4 h-full bg-gradient-to-r from-transparent via-[#38BDF8] to-transparent animate-streak-glide"
           style={{ animationDelay: '-5.5s' }}
         />
       </div>
@@ -77,10 +77,10 @@ export const AmbientBackdrop: React.FC = () => {
         className="absolute inset-0 w-full h-full opacity-75"
         preserveAspectRatio="none"
       >
-        <line x1="8%" y1="12%" x2="29%" y2="9%" stroke="rgba(167, 139, 250, 0.14)" strokeWidth="0.7" />
-        <line x1="29%" y1="9%" x2="41%" y2="22%" stroke="rgba(245, 196, 81, 0.12)" strokeWidth="0.7" />
-        <line x1="68%" y1="26%" x2="81%" y2="11%" stroke="rgba(34, 211, 238, 0.14)" strokeWidth="0.7" />
-        <line x1="68%" y1="26%" x2="78%" y2="44%" stroke="rgba(139, 92, 246, 0.12)" strokeWidth="0.7" />
+        <line x1="8%" y1="12%" x2="29%" y2="9%" stroke="rgba(232, 193, 90, 0.14)" strokeWidth="0.7" />
+        <line x1="29%" y1="9%" x2="41%" y2="22%" stroke="rgba(248, 223, 148, 0.14)" strokeWidth="0.7" />
+        <line x1="68%" y1="26%" x2="81%" y2="11%" stroke="rgba(56, 189, 248, 0.14)" strokeWidth="0.7" />
+        <line x1="68%" y1="26%" x2="78%" y2="44%" stroke="rgba(232, 193, 90, 0.11)" strokeWidth="0.7" />
         {STAR_POINTS.map((star, idx) => (
           <circle
             key={idx}

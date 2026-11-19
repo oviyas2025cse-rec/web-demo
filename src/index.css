@@ -1,36 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, ui-serif, serif;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
 
-  /* Exclusive NIMAI Midnight Purple + Deep Navy + Electric Blue + Cyan + Subtle Gold Palette */
-  --color-obsidian-navy: #06091F;
-  --color-midnight-navy: #090F2D;
-  --color-royal-purple: #1D0F47;
-  --color-deep-violet: #2A1463;
-  --color-royal-indigo: #162463;
+  /* Sovereign NIMAI Imperial Obsidian-Sapphire, Royal Amethyst, Luminous Azure & 24K Champagne Gold */
+  --color-obsidian-navy: #040717;
+  --color-midnight-navy: #08102B;
+  --color-royal-purple: #160D3D;
+  --color-deep-violet: #22135A;
+  --color-royal-indigo: #12225C;
   --color-electric-blue: #2563EB;
   --color-azure-glow: #38BDF8;
   --color-cyan-glow: #22D3EE;
   --color-turquoise: #14B8A6;
-  --color-gold-accent: #F5C451;
-  --color-ice-mist: #E6F4FF;
+  --color-gold-accent: #E8C15A;
+  --color-champagne-gold: #F8DF94;
+  --color-burnished-gold: #C4922B;
+  --color-ice-mist: #EDF5FF;
   --color-silver-mist: #B8C7E4;
 }
 
 @layer base {
   html {
     font-family: var(--font-sans);
-    background-color: #06091F;
+    background-color: #040717;
     color: #FFFFFF;
     overflow-x: clip;
   }
 
   body {
     overflow-x: clip;
-    background-color: #06091F;
+    background-color: #040717;
   }
 
   section[id],
@@ -41,70 +43,77 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     text-wrap: balance;
+    letter-spacing: -0.015em;
   }
 
   :focus-visible {
-    outline: 2px solid #22D3EE;
+    outline: 2px solid #E8C15A;
     outline-offset: 2px;
   }
 }
 
-/* Exclusive glassmorphism & atmospheric lighting surfaces */
+/* Sovereign luxury glassmorphism & gilded sapphire surfaces */
 .nimai-glass {
   background: linear-gradient(
     145deg,
-    rgba(24, 24, 72, 0.72) 0%,
-    rgba(10, 15, 44, 0.84) 100%
+    rgba(16, 22, 58, 0.78) 0%,
+    rgba(6, 10, 30, 0.9) 100%
   );
-  border: 1px solid rgba(148, 197, 255, 0.16);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(232, 193, 90, 0.16);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: inset 0 1px 0 rgba(248, 223, 148, 0.08);
 }
 
 .nimai-glass-violet {
   background: linear-gradient(
     145deg,
-    rgba(48, 22, 108, 0.7) 0%,
-    rgba(13, 21, 59, 0.86) 100%
+    rgba(30, 18, 76, 0.78) 0%,
+    rgba(8, 13, 38, 0.92) 100%
   );
-  border: 1px solid rgba(167, 139, 250, 0.24);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(232, 193, 90, 0.24);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: inset 0 1px 0 rgba(248, 223, 148, 0.12);
 }
 
 .nimai-glass-cyan {
   background: linear-gradient(
     145deg,
-    rgba(14, 42, 82, 0.76) 0%,
-    rgba(9, 16, 44, 0.88) 100%
+    rgba(11, 31, 68, 0.8) 0%,
+    rgba(6, 11, 32, 0.92) 100%
   );
-  border: 1px solid rgba(34, 211, 238, 0.25);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: inset 0 1px 0 rgba(125, 211, 252, 0.1);
 }
 
 .nimai-glass-gold {
   background: linear-gradient(
     145deg,
-    rgba(42, 20, 99, 0.74) 0%,
-    rgba(14, 22, 58, 0.88) 100%
+    rgba(36, 24, 62, 0.8) 0%,
+    rgba(8, 12, 34, 0.92) 100%
   );
-  border: 1px solid rgba(245, 196, 81, 0.28);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(232, 193, 90, 0.36);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    inset 0 1px 0 rgba(248, 223, 148, 0.18),
+    0 18px 46px rgba(3, 5, 18, 0.56);
 }
 
 .nimai-surface-gradient {
   background:
-    radial-gradient(65% 45% at 14% 10%, rgba(109, 40, 217, 0.28) 0%, transparent 65%),
-    radial-gradient(55% 40% at 88% 16%, rgba(34, 211, 238, 0.18) 0%, transparent 62%),
-    radial-gradient(40% 35% at 72% 72%, rgba(245, 196, 81, 0.08) 0%, transparent 60%),
-    radial-gradient(50% 45% at 45% 96%, rgba(37, 99, 235, 0.2) 0%, transparent 65%),
-    linear-gradient(180deg, #06091F 0%, #0D0E36 45%, #07112F 100%);
+    radial-gradient(62% 42% at 14% 8%, rgba(76, 29, 149, 0.26) 0%, transparent 66%),
+    radial-gradient(52% 38% at 86% 14%, rgba(232, 193, 90, 0.13) 0%, transparent 60%),
+    radial-gradient(48% 40% at 78% 58%, rgba(14, 165, 233, 0.14) 0%, transparent 64%),
+    radial-gradient(50% 45% at 38% 96%, rgba(30, 64, 175, 0.22) 0%, transparent 65%),
+    linear-gradient(180deg, #040717 0%, #090C29 48%, #04091E 100%);
 }
 
 @layer components {
-  /* Pointer-responsive spotlight card glow (zero React re-renders) */
+  /* Pointer-responsive gilded sapphire spotlight glow (zero React re-renders) */
   .nimai-spotlight {
     position: relative;
     overflow: hidden;
@@ -118,9 +127,9 @@
     opacity: 0;
     transition: opacity 0.35s ease;
     background: radial-gradient(
-      420px circle at var(--mx, 50%) var(--my, 50%),
-      rgba(34, 211, 238, 0.16),
-      rgba(139, 92, 246, 0.08) 42%,
+      440px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(232, 193, 90, 0.16),
+      rgba(56, 189, 248, 0.08) 44%,
       transparent 72%
     );
     z-index: 1;
@@ -128,6 +137,22 @@
 
   .nimai-spotlight:hover::before {
     opacity: 1;
+  }
+
+  /* Sovereign royal 24K gold CTA button styling */
+  .nimai-btn-royal {
+    background: linear-gradient(115deg, #F8DF94 0%, #E8C15A 48%, #C8962E 100%);
+    color: #060918;
+    box-shadow:
+      0 10px 32px rgba(232, 193, 90, 0.28),
+      inset 0 1px 0 rgba(255, 250, 224, 0.72);
+  }
+
+  .nimai-btn-royal:hover {
+    filter: brightness(1.06);
+    box-shadow:
+      0 14px 38px rgba(232, 193, 90, 0.4),
+      inset 0 1px 0 rgba(255, 250, 224, 0.85);
   }
 
   /* Luminous button sheen sweep */
@@ -143,31 +168,43 @@
     background: linear-gradient(
       110deg,
       transparent 20%,
-      rgba(255, 255, 255, 0.36) 50%,
+      rgba(255, 252, 235, 0.42) 50%,
       transparent 80%
     );
     transform: translateX(-125%);
-    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
     pointer-events: none;
   }
 
   .nimai-btn-sheen:hover::after {
     transform: translateX(125%);
   }
+
+  /* Subtle diagonal gold-sapphire sheen over the transparent brand logo on hover */
+  .nimai-logo-sheen {
+    overflow: visible;
+  }
+
+  .nimai-gold-text {
+    background: linear-gradient(110deg, #FFF2C2 0%, #E8C15A 42%, #F8DF94 68%, #7DD3FC 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
-/* Precision architectural grid */
+/* Precision architectural gilded-sapphire grid */
 .bg-engineering-grid {
   background-image:
-    linear-gradient(to right, rgba(56, 189, 248, 0.065) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(139, 92, 246, 0.065) 1px, transparent 1px);
-  background-size: 52px 52px;
+    linear-gradient(to right, rgba(232, 193, 90, 0.048) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.055) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 
 .bg-engineering-grid-fine {
   background-image:
-    linear-gradient(to right, rgba(34, 211, 238, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(232, 193, 90, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 

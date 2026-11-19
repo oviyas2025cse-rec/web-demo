@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ArrowUpRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { HeroSection } from '../components/HeroSection';
 import { CapabilitiesSection } from '../components/CapabilitiesSection';
 import { SmartBuildingViz } from '../components/SmartBuildingViz';
@@ -145,7 +145,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <MagneticButton
                   type="button"
                   onClick={() => onNavigate('about')}
-                  className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm text-[#041024] bg-gradient-to-r from-[#22D3EE] to-[#38BDF8] hover:brightness-110 shadow-[0_8px_24px_rgba(34,211,238,0.28)] cursor-pointer"
+                  className="nimai-btn-royal group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm cursor-pointer"
                 >
                   <span>Discover Our Story &amp; Organisation</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -160,11 +160,11 @@ export const HomePage: React.FC<HomePageProps> = ({
       <CapabilitiesSection onNavigate={onNavigate} />
 
       {/* 4. Why Choose NIMAI — Authentic Engineering Pillars */}
-      <section className="relative z-10 py-20 lg:py-24 border-t border-white/10">
+      <section className="relative z-10 py-20 lg:py-24 border-t border-[#E8C15A]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="max-w-2xl space-y-3 mb-12">
-            <p className="inline-flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.22em] text-[#F5C451]">
-              <Sparkles className="w-4 h-4" />
+            <p className="inline-flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.22em] text-[#E8C15A]">
+              <span className="h-px w-8 bg-gradient-to-r from-[#E8C15A] to-transparent" />
               <span>Why Choose NIMAI Engineering</span>
             </p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
@@ -175,20 +175,20 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {WHY_CHOOSE_NIMAI.map((pillar, idx) => (
               <ScrollReveal key={pillar.id} delay={idx * 0.07}>
-                <SpotlightCard className="h-full nimai-glass-violet rounded-2xl p-6 flex flex-col justify-between gap-5 hover:border-[#F5C451]/45 transition-colors">
-                  <div className="relative z-10 flex items-center justify-between">
-                    <span className="font-mono text-xs tracking-[0.2em] text-[#F5C451]">
+                <SpotlightCard className="h-full nimai-glass-gold rounded-2xl p-6 flex flex-col justify-between gap-5 hover:border-[#E8C15A]/60 transition-colors">
+                  <div className="relative z-10 flex items-center justify-between gap-2 pb-3 border-b border-white/10 text-xs font-mono">
+                    <span className="tracking-[0.2em] text-[#E8C15A]">
                       {pillar.index}
                     </span>
-                    <span className="font-mono text-xs px-2.5 py-1 rounded-lg bg-[#22D3EE]/12 border border-[#22D3EE]/30 text-[#22D3EE]">
+                    <span className="text-[#7DD3FC] tabular-nums">
                       {pillar.metric}
                     </span>
                   </div>
                   <div className="relative z-10 space-y-2.5">
-                    <h3 className="font-display text-lg font-bold text-white leading-snug">
+                    <h3 className="font-display text-2xl font-bold text-white leading-snug">
                       {pillar.title}
                     </h3>
-                    <p className="text-sm text-[#C7D7F2] leading-relaxed">
+                    <p className="text-sm text-[#CDDDF5] leading-relaxed">
                       {pillar.description}
                     </p>
                   </div>

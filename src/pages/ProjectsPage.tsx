@@ -83,19 +83,19 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
       <section className="relative z-10 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <SpotlightCard className="nimai-glass-violet rounded-3xl p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <SpotlightCard className="nimai-glass-gold rounded-3xl p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div className="relative z-10 space-y-2 max-w-2xl">
-                <p className="text-xs font-mono uppercase tracking-[0.2em] text-[#F5C451]">
+                <p className="text-xs font-mono uppercase tracking-[0.2em] text-[#E8C15A]">
                   Plan Your Next Development
                 </p>
-                <h2 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                <h2 className="font-display text-3xl sm:text-4xl font-bold text-white">
                   Need an experienced ELV &amp; M&amp;E contractor for your property?
                 </h2>
               </div>
               <MagneticButton
                 type="button"
                 onClick={() => onNavigate('contact')}
-                className="relative z-10 group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-[#041024] bg-gradient-to-r from-[#22D3EE] to-[#38BDF8] hover:brightness-110 cursor-pointer shrink-0"
+                className="nimai-btn-royal relative z-10 group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold cursor-pointer shrink-0"
               >
                 <span>Schedule a Site Survey</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

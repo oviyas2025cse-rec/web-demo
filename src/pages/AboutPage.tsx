@@ -190,13 +190,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
       <section className="relative z-10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <SpotlightCard className="nimai-glass-violet rounded-3xl p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <SpotlightCard className="nimai-glass-gold rounded-3xl p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div className="relative z-10 space-y-2 max-w-2xl">
-                <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#F5C451]">
+                <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#E8C15A]">
                   <Award className="w-4 h-4" />
                   <span>Partner with NIMAI Engineering</span>
                 </div>
-                <h2 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                <h2 className="font-display text-3xl sm:text-4xl font-bold text-white">
                   Ready to plan an integrated ELV or M&amp;E upgrade?
                 </h2>
               </div>
@@ -204,14 +204,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 <MagneticButton
                   type="button"
                   onClick={() => onNavigate('services')}
-                  className="px-5 py-3 rounded-xl text-sm font-semibold text-white nimai-glass hover:border-cyan-300/45 cursor-pointer"
+                  className="px-5 py-3 rounded-xl text-sm font-semibold text-white nimai-glass hover:border-[#E8C15A]/55 cursor-pointer"
                 >
                   Explore Services
                 </MagneticButton>
                 <MagneticButton
                   type="button"
                   onClick={() => onNavigate('contact')}
-                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-[#041024] bg-gradient-to-r from-[#22D3EE] to-[#38BDF8] hover:brightness-110 cursor-pointer"
+                  className="nimai-btn-royal group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold cursor-pointer"
                 >
                   <span>Contact Our Team</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

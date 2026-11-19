@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { AmbientBackdrop } from './components/AmbientBackdrop';
+import { BrandCrestIntro } from './components/BrandCrestIntro';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ScrollProgressBar } from './components/MotionPrimitives';
@@ -79,11 +80,14 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#06091F] text-white relative selection:bg-[#22D3EE]/30 selection:text-white">
-      {/* Persistent Midnight Purple, Deep Navy, Cyan & Gold Kinetic Backdrop */}
+    <div className="min-h-screen flex flex-col bg-[#040717] text-white relative selection:bg-[#E8C15A]/30 selection:text-white">
+      {/* First-Visit Sovereign Brand Crest Reveal (auto-bypassed via ?autostart=1 or reduced motion) */}
+      <BrandCrestIntro />
+
+      {/* Persistent Imperial Sapphire, Midnight Amethyst & 24K Gold Kinetic Backdrop */}
       <AmbientBackdrop />
 
-      {/* Persistent Transparent Glassmorphism Navigation + Scroll Progress Rail */}
+      {/* Persistent Royal Glassmorphism Navigation + Molten-Gold Scroll Progress Rail */}
       <Navbar currentRoute={currentRoute} onNavigate={navigate} />
       <ScrollProgressBar />
 
@@ -93,7 +97,7 @@ export default function App() {
           key={currentRoute}
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
         >
           {currentRoute === 'home' && (
             <HomePage
@@ -131,7 +135,7 @@ export default function App() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with NIMAI Engineering on WhatsApp"
-        className="nimai-btn-sheen fixed bottom-28 right-4 sm:right-6 z-40 inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#128C7E] via-[#0F766E] to-[#0891B2] hover:brightness-110 hover:-translate-y-0.5 border border-cyan-300/40 shadow-[0_12px_34px_rgba(6,182,212,0.42)] transition-all"
+        className="nimai-btn-sheen fixed bottom-5 right-4 sm:right-6 z-40 inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#0F766E] via-[#0D6B64] to-[#0B5D6B] hover:brightness-110 hover:-translate-y-0.5 border border-[#E8C15A]/45 shadow-[0_12px_34px_rgba(3,8,24,0.65)] transition-all"
       >
         <WhatsAppIcon className="w-4 h-4 shrink-0" />
         <span className="hidden sm:inline">WhatsApp Us</span>

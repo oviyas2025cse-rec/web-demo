@@ -8,7 +8,7 @@ import {
   useTransform,
 } from 'motion/react';
 
-/* 1. Sleek Luminous Scroll Progress Rail pinned cleanly under top navigation */
+/* 1. Sleek Molten-Gold to Sapphire Scroll Progress Rail pinned cleanly under top navigation */
 export const ScrollProgressBar: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -21,7 +21,7 @@ export const ScrollProgressBar: React.FC = () => {
     <motion.div
       aria-hidden="true"
       style={{ scaleX, transformOrigin: '0% 50%' }}
-      className="fixed top-16 sm:top-[74px] left-0 right-0 h-[2px] z-50 pointer-events-none bg-gradient-to-r from-[#8B5CF6] via-[#22D3EE] to-[#F5C451]"
+      className="fixed top-20 sm:top-[88px] left-0 right-0 h-[2px] z-50 pointer-events-none bg-gradient-to-r from-[#C4922B] via-[#F8DF94] to-[#38BDF8]"
     />
   );
 };
@@ -51,7 +51,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.14 }}
-      transition={{ duration: 0.62, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}
@@ -175,7 +175,58 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   );
 };
 
-/* 6. Authentic Number Counter (Used strictly for verified NIMAI metrics) */
+/* 6. Sovereign 3D Perspective Tilt Showcase Card (Compositor-Only Transform) */
+interface RoyalTiltCardProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+  maxTilt?: number;
+}
+
+export const RoyalTiltCard: React.FC<RoyalTiltCardProps> = ({
+  children,
+  className = '',
+  maxTilt = 5,
+  onMouseMove,
+  onMouseLeave,
+  ...rest
+}) => {
+  const prefersReduced = useReducedMotion();
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    onMouseMove?.(e);
+    const el = e.currentTarget;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    el.style.setProperty('--mx', `${x}px`);
+    el.style.setProperty('--my', `${y}px`);
+    if (prefersReduced || window.matchMedia('(pointer: coarse)').matches) return;
+    const rx = ((y / rect.height) - 0.5) * -maxTilt * 2;
+    const ry = ((x / rect.width) - 0.5) * maxTilt * 2;
+    el.style.transform = `perspective(1000px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+  };
+
+  const handleLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    onMouseLeave?.(e);
+    e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+  };
+
+  return (
+    <div
+      onMouseMove={handleMove}
+      onMouseLeave={handleLeave}
+      style={{
+        transition: 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)',
+        willChange: 'transform',
+      }}
+      className={`nimai-spotlight ${className}`}
+      {...rest}
+    >
+      {children}
+    </div>
+  );
+};
+
+/* 7. Authentic Number Counter (Used strictly for verified NIMAI metrics, tabular-nums) */
 interface AnimatedCounterProps {
   target: number;
   suffix?: string;
@@ -215,7 +266,7 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
   }, [inView, target, durationMs, prefersReduced]);
 
   return (
-    <span ref={ref}>
+    <span ref={ref} className="tabular-nums">
       {prefix}
       {value}
       {suffix}
